@@ -36,6 +36,7 @@ Interceptor.attach(Module.findExportByName('libcommonCrypto.dylib', 'CCHmac'), {
         if (args[0] == 0x0) { console.log("[+] CCHmacAlgorithm: " + args[0] + " --> kCCHmacAlgSHA1"); AlgorithmCount = 40; }
         if (args[0] == 0x1) { console.log("[+] CCHmacAlgorithm: " + args[0] + " --> kCCHmacAlgMD5"); AlgorithmCount = 32; }
         if (args[0] == 0x2) { console.log("[+] CCHmacAlgorithm: " + args[0] + " --> kCCHmacAlgSHA256"); AlgorithmCount = 64; }
+        if (args[0] == 0x4) { console.log("[+] CCHmacAlgorithm: " + args[0] + " --> kCCHmacAlgSHA512"); AlgorithmCount = 128; }
         try {
             LOG("[+] key: " + Memory.readUtf8String(args[1], args[2].toInt32()), { c: Color.Gray });
         } catch (e) {
